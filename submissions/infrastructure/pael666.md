@@ -1,9 +1,11 @@
-vApp Submission: ProofLens
-Verification
+# vApp Submission: ProofLens
+##Verification
+
+```yaml
 github_username: "pael666"
 discord_id: "pa3l"
 timestamp: "2025-12-05"
-
+```
 Developer
 
 Name: Raphael Pardamean
