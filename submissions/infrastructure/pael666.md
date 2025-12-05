@@ -1,10 +1,9 @@
-# vApp Submission: ProofLens
-
-## Verification
-```yaml
+vApp Submission: ProofLens
+Verification
 github_username: "pael666"
 discord_id: "pa3l"
 timestamp: "2025-12-05"
+
 Developer
 
 Name: Raphael Pardamean
@@ -14,7 +13,7 @@ GitHub: @pael666
 Discord: pa3l
 
 Experience:
-I’ve been experimenting with Web3 development by building small prototypes and exploring tools related to verification, identity, and content authenticity. Lately I’ve been interested in how creators can prove authorship in a simple and privacy-friendly way, which led me to build ProofLens.
+I’ve been experimenting with Web3 development by building small prototypes and exploring tools related to verification, identity, and content authenticity. Recently I’ve been interested in how creators can prove authorship in a simple and privacy-friendly way, which led me to build ProofLens.
 
 Project
 Name & Category
@@ -25,7 +24,7 @@ Category: infrastructure
 
 Description
 
-It’s becoming harder to know whether someone genuinely created a piece of content, especially with AI tools everywhere. ProofLens gives users a simple way to prove authorship of text or images without exposing the content itself. The app generates a local hash, then uses the Soundness Layer to create an attestation that links the user to that hash. Other apps can verify this proof independently.
+It’s becoming harder to know whether someone genuinely created a piece of content, especially with AI tools everywhere. ProofLens gives users a simple way to prove authorship of text or images without exposing the content itself. The app generates a local hash, then uses the Soundness Layer to create an attestation linking the user to that hash. Other apps can verify this proof independently.
 
 SL Integration
 
@@ -40,8 +39,8 @@ The frontend handles content upload and hashing locally.
 
 The backend receives the hash and interacts with the Soundness Layer to generate the attestation.
 
-A verification endpoint lets other apps confirm whether a hash has a valid proof attached.
-Optional storage (like WALRUS/IPFS) can be used if users want to store their content, but it isn’t required.
+A verification endpoint lets other apps confirm whether a hash has a valid proof.
+Optional storage (like WALRUS/IPFS) may be used if users want to store content, but it’s not required.
 
 Stack
 
@@ -59,7 +58,7 @@ Local content hashing for privacy
 
 Authorship attestation through SL
 
-User dashboard to view proofs
+Dashboard for users to view their proofs
 
 Timeline
 PoC (2-4 weeks)
@@ -80,8 +79,19 @@ MVP (4-8 weeks)
 
 Innovation
 
-ProofLens focuses on a practical problem: proving content ownership in a world filled with AI-generated material. Instead of trying to detect AI or block automation, it gives creators a way to show, “I made this, and here’s verifiable proof.” It’s small, simple, and something many applications can build on.
+ProofLens focuses on a practical problem: proving content ownership in a world filled with AI-generated material. Instead of detecting AI, it gives creators a simple way to say, “I made this, and here’s proof.” Because it uses the Soundness Layer, the attestation can be verified anywhere without trusting ProofLens itself.
 
 Contact
 
-Preferred contact: Discord (pa3l). Updates will be shared through GitHub (@pael666).
+Preferred contact: Discord (pa3l).
+Updates will be shared via GitHub (@pael666).
+
+Checklist before submitting:
+
+ All fields completed
+
+ GitHub username matches PR author
+
+ SL integration explained
+
+ Timeline is realistic
