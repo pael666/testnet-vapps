@@ -1,12 +1,10 @@
-Project: ProofLens
-Category: Infrastructure
-Developer: Raphael Pardamean (pael666)
+# vApp Submission: ProofLens
 
-Verification
+## Verification
+```yaml
 github_username: "pael666"
 discord_id: "pa3l"
 timestamp: "2025-12-05"
-
 Developer
 
 Name: Raphael Pardamean
@@ -16,109 +14,74 @@ GitHub: @pael666
 Discord: pa3l
 
 Experience:
-I’ve been exploring Web3 development and the idea of building tools that help people trust what they see online. I enjoy working on small prototypes, testing ideas quickly, and learning new frameworks along the way. Lately, I’ve been interested in systems that deal with verification and identity, especially as AI content becomes harder to distinguish. ProofLens is my attempt to create something useful and simple for creators and developers.
+I’ve been experimenting with Web3 development by building small prototypes and exploring tools related to verification, identity, and content authenticity. Lately I’ve been interested in how creators can prove authorship in a simple and privacy-friendly way, which led me to build ProofLens.
 
 Project
 Name & Category
 
 Project: ProofLens
 
-Category: Infrastructure
+Category: infrastructure
 
 Description
 
-It’s becoming harder every year to tell whether a piece of content truly comes from the person who claims to have created it. With the rise of AI-generated text and images, the internet is starting to feel full of things that look real but aren’t tied to any real creator.
+It’s becoming harder to know whether someone genuinely created a piece of content, especially with AI tools everywhere. ProofLens gives users a simple way to prove authorship of text or images without exposing the content itself. The app generates a local hash, then uses the Soundness Layer to create an attestation that links the user to that hash. Other apps can verify this proof independently.
 
-ProofLens aims to provide a small, practical solution to that problem.
-The idea is simple: let users prove that they created or own a specific piece of content — without needing to reveal the content itself.
+SL Integration
 
-A user uploads a text snippet or an image, the app turns it into a hash locally, and then Soundness Layer creates an attestation linking the user to that hash. The attestation can be verified by any other application later on.
-
-It’s not meant to replace social platforms or marketplaces. Instead, ProofLens acts more like a building block — a small piece of infrastructure that developers can plug into their own apps when they want a reliable way to check if content really belongs to someone.
-
-Soundness Layer Integration
-
-Soundness Layer plays a central role in how ProofLens works:
-
-Creating a trustworthy authorship proof
-Instead of storing data in a centralized database, the attestation comes from SL.
-This makes the authorship claim tamper-proof and independently verifiable.
-
-Allowing verification without exposing the content
-Only the hash is used.
-Applications can confirm the attestation without ever accessing the original content.
-
-Providing a neutral verification layer
-No need to trust ProofLens itself.
-The proof lives on SL, so any app can check it from there.
-
-The SL essentially becomes the “trust backbone” of the system — the part that makes the attestation meaningful.
+ProofLens relies on the Soundness Layer to produce verifiable authorship attestations. The SL allows users to create proofs that are tamper-proof and can be validated without needing the original content. Third-party apps can check these attestations directly through SL, making the authorship claim portable and trustworthy.
 
 Technical
-Architecture Overview
+Architecture
 
-Frontend (React / Next.js)
-A lightweight interface where users upload content.
-The hashing happens locally, so the original file never leaves the browser.
+The flow is straightforward:
 
-Backend (Node.js or Rust)
-Receives the hash and interacts with the Soundness Layer to create the attestation.
-Only minimal data is stored — mostly for the user’s dashboard.
+The frontend handles content upload and hashing locally.
 
-Soundness Layer
-Generates and verifies all attestations.
+The backend receives the hash and interacts with the Soundness Layer to generate the attestation.
 
-Verification API
-A simple endpoint that apps can call to check whether a specific content hash has a valid attestation.
+A verification endpoint lets other apps confirm whether a hash has a valid proof attached.
+Optional storage (like WALRUS/IPFS) can be used if users want to store their content, but it isn’t required.
 
-Optional Storage (IPFS / WALRUS)
-Only used if users want to permanently store their content, but not required for the core workflow.
+Stack
+
+Frontend: React / Next.js
+
+Backend: Node.js
+
+Blockchain: SL
+
+Storage: WALRUS / IPFS (optional)
 
 Features
 
-Local hashing for privacy
+Local content hashing for privacy
 
-Attestation creation through SL
+Authorship attestation through SL
 
-Dashboard to track all proofs created by the user
-
-Public verification endpoint for third-party apps
+User dashboard to view proofs
 
 Timeline
-PoC: 2–4 weeks
+PoC (2-4 weeks)
 
-Local hashing of content
+ Basic functionality
 
-First working attestation request to SL
+ SL integration
 
-Minimal UI to upload content and display proof
+ Simple UI
 
-Simple verification endpoint
+MVP (4-8 weeks)
 
-MVP: 4–8 weeks
+ Full features
 
-Full dashboard for users
+ Production ready
 
-Public verification API
-
-Support for multiple content formats
-
-Basic UX polish and testing
+ User testing
 
 Innovation
 
-What makes ProofLens interesting isn’t that it’s a full platform — it’s that it tries to solve one problem cleanly:
-
-“How do you prove you actually made something, without giving it away?”
-
-Instead of fighting AI or building complex anti-bot systems, ProofLens leans on the idea of authorship as a cryptographic claim. Anyone can generate content, even AI — but being able to prove you were the one who submitted it first gives creators an advantage.
-
-And because the entire proof system sits on the Soundness Layer, other apps don’t need to trust ProofLens. They can verify everything independently.
-
-It’s a small piece of infrastructure, but one that can fit into social apps, marketplaces, creative platforms, identity systems, and even private communities where authenticity matters.
+ProofLens focuses on a practical problem: proving content ownership in a world filled with AI-generated material. Instead of trying to detect AI or block automation, it gives creators a way to show, “I made this, and here’s verifiable proof.” It’s small, simple, and something many applications can build on.
 
 Contact
 
-Preferred: Discord (pa3l)
-
-Updates: GitHub (@pael666)
+Preferred contact: Discord (pa3l). Updates will be shared through GitHub (@pael666).
